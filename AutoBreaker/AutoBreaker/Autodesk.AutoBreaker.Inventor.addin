@@ -1,0 +1,14 @@
+<Addin Type="Standard">
+  <!--Created for Autodesk Inventor Version 22.0-->
+  <ClassId>{9b6422da-2e2b-40df-9427-04dd03bdb56b}</ClassId>
+  <ClientId>{9b6422da-2e2b-40df-9427-04dd03bdb56b}</ClientId>
+  <DisplayName>AutoBreaker</DisplayName>
+  <Description>AutoBreaker</Description>
+  <Assembly>AutoBreaker.dll</Assembly>
+  <LoadOnStartUp>1</LoadOnStartUp>
+  <UserUnloadable>1</UserUnloadable>
+  <Hidden>0</Hidden>
+  <SupportedSoftwareVersionGreaterThan>21..</SupportedSoftwareVersionGreaterThan>
+  <DataVersion>1</DataVersion>
+  <UserInterfaceVersion>1</UserInterfaceVersion>
+</Addin>
