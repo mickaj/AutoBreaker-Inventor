@@ -10,9 +10,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("AutoBreaker")]
 [assembly: AssemblyDescription("AutoBreaker")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Autodesk, Inc.")]
+[assembly: AssemblyCompany("Michal Kajzer")]
 [assembly: AssemblyProduct("Autodesk Inventor")]
-[assembly: AssemblyCopyright("Copyright ?2012 Autodesk, Inc.")]
+[assembly: AssemblyCopyright("Copyright 2017 Michal Kajzer")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

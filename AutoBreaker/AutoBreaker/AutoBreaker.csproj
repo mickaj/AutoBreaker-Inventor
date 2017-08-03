@@ -104,6 +104,12 @@
   <ItemGroup>
     <None Include="Readme.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="img\gear128.ico" />
+    <EmbeddedResource Include="img\gear16.ico" />
+    <EmbeddedResource Include="img\plus128.ico" />
+    <EmbeddedResource Include="img\plus16.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>
