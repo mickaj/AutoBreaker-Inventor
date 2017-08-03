@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 // associated with an assembly.
 //
 [assembly: AssemblyTitle("AutoBreaker")]
-[assembly: AssemblyDescription("AutoBreaker")]
+[assembly: AssemblyDescription("AutoBreaker allows to automatically add a break to biggest view in active sheet.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Michal Kajzer")]
 [assembly: AssemblyProduct("Autodesk Inventor")]
