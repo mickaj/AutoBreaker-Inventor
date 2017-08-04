@@ -3,8 +3,11 @@ using System.IO;
 using System.Reflection;
 using System.Drawing;
 using System.Runtime.InteropServices;
-using Inventor;
 using System.Windows;
+using Inventor;
+using InvAddIn.View;
+using InvAddIn.Model;
+using InvAddIn.ViewModel;
 
 namespace AutoBreaker
 {
@@ -38,6 +41,9 @@ namespace AutoBreaker
         CommandControl controlApplyBreak;
         CommandControl controlSettingsBreak;
 
+        //add-in model
+        ISettingsModel model;
+
         public StandardAddInServer()
         {
         }
@@ -55,11 +61,14 @@ namespace AutoBreaker
 
             // TODO: Add ApplicationAddInServer.Activate implementation.
             // e.g. event initialization, command creation etc.
-            
-            //get icon objects
+
+            // Initialize add-in model
+            model = new SettingsModel();
+
+            // get icon objects
             getIcons();
 
-            //modify the ribbon
+            // modify the ribbon
             modifyRibbon();
         }
 
@@ -73,6 +82,28 @@ namespace AutoBreaker
 
             // Release objects.
             m_inventorApplication = null;
+            model = null;
+            plus16obj = null;
+            plus128obj = null;
+            gear16obj = null;
+            gear128obj = null;
+
+            cmdMan = null;
+            ctrlDefs = null;
+            cmdCat.Delete();
+            cmdCat = null;
+            drawingRibbon = null;
+            placeTab = null;
+            applyButton.Delete();
+            applyButton = null;
+            settingsButton.Delete();
+            settingsButton = null;
+            panel.Delete();
+            panel = null;
+            controlApplyBreak.Delete();
+            controlApplyBreak = null;
+            controlSettingsBreak.Delete();
+            controlSettingsBreak = null;
 
             GC.Collect();
             GC.WaitForPendingFinalizers();
@@ -152,7 +183,7 @@ namespace AutoBreaker
 
             //define 'Settings' button
             settingsButton = ctrlDefs.AddButtonDefinition("Settings", "Autodesk:AutoBreaker:SettingsButton", CommandTypesEnum.kQueryOnlyCmdType, addInGuid, "auto-breaker settings description", "auto-break settings tool-tip", gear16obj, gear128obj, ButtonDisplayEnum.kAlwaysDisplayText);
-            settingsButton.OnExecute += new ButtonDefinitionSink_OnExecuteEventHandler(customAction);
+            settingsButton.OnExecute += new ButtonDefinitionSink_OnExecuteEventHandler(settingsClick);
             cmdCat.Add(settingsButton);
 
             //define panel in 'Place Views' tab
@@ -164,6 +195,13 @@ namespace AutoBreaker
         private void customAction(NameValueMap options)
         {
             MessageBox.Show("button clicked");
+        }
+
+        private void settingsClick(NameValueMap options)
+        {
+            SettingsView settingWindow = new SettingsView();
+            settingWindow.DataContext = new SettingsViewModel(model);
+            settingWindow.ShowDialog();
         }
 
         #endregion
