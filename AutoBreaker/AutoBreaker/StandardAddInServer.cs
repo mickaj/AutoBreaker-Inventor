@@ -203,8 +203,6 @@ namespace AutoBreaker
             settingWindow.DataContext = new SettingsViewModel(model);
             settingWindow.ShowDialog();
         }
-
         #endregion
-
     }
 }
