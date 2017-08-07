@@ -43,6 +43,7 @@ namespace AutoBreaker
 
         //add-in model
         ISettingsModel model;
+        IInventorHandler handler;
 
         public StandardAddInServer()
         {
@@ -64,6 +65,7 @@ namespace AutoBreaker
 
             // Initialize add-in model
             model = new SettingsModel();
+            handler = new InventorHandler(m_inventorApplication, model);            
 
             // get icon objects
             getIcons();
@@ -194,7 +196,7 @@ namespace AutoBreaker
 
         private void customAction(NameValueMap options)
         {
-            MessageBox.Show("button clicked");
+            handler.AutoBreak();
         }
 
         private void settingsClick(NameValueMap options)

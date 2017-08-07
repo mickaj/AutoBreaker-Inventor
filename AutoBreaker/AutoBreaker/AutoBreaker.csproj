@@ -86,7 +86,7 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="System">
       <Name>System</Name>
@@ -101,6 +101,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="AxHostConverter.cs" />
+    <Compile Include="Model\InventorHandler.cs" />
     <Compile Include="Model\SettingsModel.cs" />
     <Compile Include="StandardAddInServer.cs">
       <SubType>Code</SubType>

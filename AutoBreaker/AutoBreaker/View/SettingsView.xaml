@@ -19,8 +19,8 @@
             <StackPanel>
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="5*"/>
                     </Grid.ColumnDefinitions>
                     <Label Content="Break style: " Grid.Column="0"/>
                     <ComboBox Grid.Column="1" SelectedIndex="{Binding Path=Style, Mode=TwoWay}">
@@ -38,10 +38,10 @@
                 </Grid>
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="2*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="4*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="5*"/>
                     </Grid.ColumnDefinitions>
                     <Label Content="Gap: " Grid.Column="0"/>
                     <TextBox MaxLength="5" Grid.Column="1" VerticalContentAlignment="Center" Text="{Binding Path=Gap, Mode=TwoWay}"/>
